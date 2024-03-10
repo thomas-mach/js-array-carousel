@@ -23,27 +23,34 @@ let firstItem = divItemsElements[itemIndex]
 firstItem.classList.add('active')
 
 nextElement.addEventListener('click', function(){
-    prevElement.style.display = 'block'
+    // prevElement.style.display = 'block'
     firstItem.classList.remove('active')
     itemIndex ++
+    if(itemIndex > imagesArray.length -1){
+        itemIndex = 0
+    }
+
     firstItem = divItemsElements[itemIndex]
     firstItem.classList.add('active')
-    if(itemIndex === imagesArray.length -1){
-        nextElement.style.display = 'none'
-    }
-    console.log(itemIndex)
+    // if(itemIndex === imagesArray.length -1){
+    //     nextElement.style.display = 'none'
+    // }
+    // console.log(itemIndex)
 })
 
 prevElement.addEventListener('click', function(){
-    nextElement.style.display = 'block'
+    // nextElement.style.display = 'block'
     firstItem.classList.remove('active')
     itemIndex --
+    if(itemIndex < 1){
+        itemIndex = imagesArray.length -1
+    }
     firstItem = divItemsElements[itemIndex]
     firstItem.classList.add('active')
-    if(itemIndex === 0){
-        prevElement.style.display = 'none'
-    }
-console.log(itemIndex)
+//     if(itemIndex === 0){
+//         prevElement.style.display = 'none'
+//     }
+// console.log(itemIndex)
 })
 
 
